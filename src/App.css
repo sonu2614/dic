@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: #eae8e8;
+}
+button:hover{
+    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    color: white;
+    padding: 1rem 2.5rem;
+}
+.navbar > h3{
+    font-size: 20px;
+    font-weight: 600;
+}
+.navbar > .nav-links{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home{
+    padding: 1rem 2.5rem;
+}
+.search{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+#searchBar, #search-btn{
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+#search-btn{
+    background-color: #2b2b2b;
+    color: white;
+}
+#searchBar:focus{
+    outline: 2px solid lightblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#loading{
+    align-self: center;
+    max-width: 200px;
+    height: auto;
+}
+.error{
+    align-self: center;
+    background-color: white;
+    color: red;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.word-meaning{
+    padding: 1rem 2.5rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 10px #afa7a7;
+    gap: 1rem;
+}
+.word-meaning > h2{
+    text-decoration: underline;
+}
+audio{
+    max-width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.phonetics, .meanings, .meaning{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.wrapper{
+    padding: 1rem 2.5rem;
+}
+.words{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2.5rem;
+    background-color: white;
+    border-radius: 10px;
+}
+.words a{
+    font-size: 22px;
+    text-decoration: none;
+    color: #4D2DB7;
+    font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.words a:hover{
+    text-decoration: underline;
+}
+
+.words li::marker{
+    color: #4D2DB7;
+    font-size: 22px;
+}
+
+.word-history{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (width < 425px){
+    .navbar{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .home, .wrapper{
+        padding: 1rem;
+    }
+    .word-meaning{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    li{
+      margin: 5px 20px;  
+    }
 }
